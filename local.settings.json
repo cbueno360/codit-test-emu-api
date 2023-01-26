@@ -4,5 +4,8 @@
     "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "CONNECTION_STRING": "AccountEndpoint=https://codit-exam-test.documents.azure.com:443/;AccountKey=voCyRiZv3XwJ0FCfSCt3S7m9ZBxRhpb3JWr37sKevRwoZPM7W0tOFm9Qis8Vz9npELOvLeGY3SoHACDbfHXvsg==;"
+  },
+  "Host": {
+    "CORS": "*"
   }
 }

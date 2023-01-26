@@ -19,8 +19,8 @@ const questionService = {
       parameters: [{ name: "@id", value: id }],
     };
     const iterator = this.container.items.query(query);
-    const { resources } = await iterator.fetchAll();
-    return JSON.stringify(resources);
+    const { resources } = await iterator.fetchNext();
+    return JSON.stringify(resources[0]);
   },
 };
 
