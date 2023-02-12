@@ -5,7 +5,6 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  console.log("Exams started");
   context.res = await examService
     .readAll()
     .then(responseSuccess)

@@ -31,4 +31,9 @@ export type ExamEvent =
         examId: string;
         questionId: string;
       };
+    }
+  | {
+      aggregateId: string;
+      createdAt: Date;
+      type: "ExamDeleted";
     };

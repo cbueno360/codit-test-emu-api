@@ -11,7 +11,14 @@ export const evolve = (currentState: Exam, event: ExamEvent): Exam => {
         questions: null,
       };
     case "QuestionRemoved":
-      return currentState;
+      return {
+        ...currentState,
+        questions: currentState.questions
+          ? currentState.questions.filter(
+              (question) => question.id !== event.data.questionId
+            )
+          : [],
+      };
     case "QuestionAdded":
       var outcome = [
         {
@@ -35,10 +42,13 @@ export const evolve = (currentState: Exam, event: ExamEvent): Exam => {
       }
 
       return {
-        id: event.data.examId,
-        status: "Active",
-        createAt: new Date(),
+        ...currentState,
         questions: outcome,
+      };
+    case "ExamDeleted":
+      return {
+        ...currentState,
+        status: "Inactive",
       };
     default: {
       return currentState;

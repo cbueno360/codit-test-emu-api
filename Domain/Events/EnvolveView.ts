@@ -28,6 +28,11 @@ export const evolveView = (
         questionsQtd: currentState.questionsQtd + 1,
         updatedAt: event.createdAt,
       };
+    case "ExamDeleted":
+      return {
+        ...currentState,
+        status: "Inactive",
+      };
     default: {
       return currentState;
     }

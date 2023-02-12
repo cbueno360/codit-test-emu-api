@@ -28,7 +28,6 @@ const eventService = {
     };
     const iterator = this.container.items.query(query);
     const { resources } = await iterator.fetchAll();
-    console.log(resources);
     return resources;
   },
 };
